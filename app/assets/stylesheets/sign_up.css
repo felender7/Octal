@@ -20,7 +20,7 @@
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url(asset_path("sign_up.jpg"));
+  background: scroll center image-url("sign_up.jpg");
   background-size: cover;
 }
 
