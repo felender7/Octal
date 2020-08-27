@@ -1,3 +1,3 @@
 # Octal Portal
 
-## A Portal to help software Engineering students with tasks
+A Portal to help software Engineering students with tasks
