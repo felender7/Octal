@@ -1,0 +1,43 @@
+<%if current_user.admin?%>
+<%=render'home/templates/admin'%>
+<%else%>
+<div class="container-fluid mt-5 ">
+  <div class="alert alert-danger">
+    Note! This site is still under-development, Some of the functions might not work
+  </div>
+  <div class="row">
+
+      <div class="col-lg-7">
+        <div class="welcome-card card shadow-sm p-3 border-top-reviews ">
+          <div class="container">
+            <h4 class="display-4 text-primary">Hi, <%=current_user.name%></h4>
+            <p class="lead">We're here to help!</p>
+             <hr>
+             <small>
+               Things you can do @ Ocatal Help Portal
+               <ul>
+                 <li>Ask Questions Relating to Software Engineering</li>
+                 <li>Get Resouces</li>
+                 <li> <a href="https://www.buymeacoffee.com/felender7"></a>Buy me a coffee 😃</li>
+               </ul>
+             </small>
+
+        </div>
+        </div>
+      </div>
+      <hr>
+      <div class="col-lg-5">
+        <%=render'shared/donate'%>
+      </div>
+</div>
+  <hr>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="shadow-sm p-3 mb-5 bg-light">
+       Previously asked questions
+    </div>
+  </div>
+</div>
+</div>
+<%end%>

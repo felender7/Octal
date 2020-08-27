@@ -1,0 +1,2 @@
+module SuccoursHelper
+end

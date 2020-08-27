@@ -1,0 +1,39 @@
+<div class="container-fluid mt-5">
+  <div class="shadow-sm p-3 bg-dark text-light border-top-reviews ">
+      <div class="row">
+        <div class="col-md-8">
+          <h4><i class="far fa-list-alt"></i> all users </h4>
+
+        </div>
+        <div class="col-md-4">
+          <a href="/users" class="float-right text-danger"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a>
+        </div>
+      </div>
+  </div>
+  <div class="shadow-sm p-3 mb-5 bg-white rounded  ">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+                <th>#ID</th>
+                <th>Name</th>
+                <th>Nnumber of Questions</th>
+                <th>Created at</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%@users.each do |user|%>
+        <%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
+          <td><%=user.id%></td>
+          <td><%=link_to user.name , user %> </td>
+          <td>3</td>
+          <td><%=time_ago_in_words(user.created_at) +" ago" %></td>
+
+    <%end%>
+
+<%end%>
+</tbody>
+
+</table>
+</div>
+</div>

@@ -1,0 +1,80 @@
+<%= form_with(model: succour, local: true, class:"was-validated") do |form| %>
+<div class="container-fluid mt-3">
+<div class="row">
+  <div class="col-lg-8">
+    <div class="shadow-sm p-3 mb-5 bg-light">
+  <% if succour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(succour.errors.count, "error") %> prohibited this succour from being saved:</h2>
+      <ul>
+      <% succour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.number_field :task, class: 'form-control custom-select' ,placeholder:'Task',  required: :required%>
+  </div>
+
+  <div class="form-group">
+    <%= form.select :level, ['1', ' 2', '3'],{prompt: "Select level..."},class: 'form-control custom-select',  required: :required %>
+  </div>
+
+  <div class="form-group">
+    <%= form.select :course,['Introduction to Programming', ' Introduction to Software Engineering', 'Data Science, Algorithms and Advanced Software Engineering'],{prompt: "Select course..."}, class: 'form-control custom-select', value:"",  required: :required %>
+
+  </div>
+
+  <div class="form-group">
+    <%= form.text_area :question, class: 'form-control' ,placeholder:'Type your question...',height: 150 , required: :required  , id:"succour_question"%>
+  </div>
+
+  <div class="form-group jumbotron jumbotron-sm border-top-reviews">
+    <span class="badge bg-primary text-light"><i class="fas fa-cloud"></i> Upload-Code </span>
+    <hr>
+    <div class="custom-file">
+        <%= form.file_field :code, class: "custom-file-input form-control-file",  direct_upload: true , id:"customFile" %>
+        <label class="custom-file-label" for="customFile">Choose file</label>
+    </div>
+
+  </div>
+<hr>
+  <div class="form-group">
+    <% if succour.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', succour, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+      <%= form.button(type: "submit", class: "btn btn-primary" , data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..." .html_safe }) do %>
+         <i class="fas fa-save"></i> SAVE
+      <% end %>
+
+    <% if succour.persisted? %>
+      <%= link_to "Cancel", succour, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", succours_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
+</div>
+</div><!-- col-8 end -->
+<div class="col-lg-4">
+  <%=render'shared/donate'%>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  $('.custom-file-input').on 'change', ->
+  fileName = $(this).val().split('\\').pop()
+  $(this).siblings('.custom-file-label').addClass('selected').html fileName
+  return
+
+</script>
+
+<script type="text/javascript">
+  // Replace the <textarea id="editor1"> with a CKEditor
+  // instance, using default configuration.
+  CKEDITOR.replace( 'succour_question' );
+</script>

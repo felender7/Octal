@@ -1,0 +1,16 @@
+<%if user_signed_in?%>
+<div class="nav-scroller bg-white box-shadow">
+  <nav class="nav nav-underline ">
+    <%=link_to root_path, class:"nav-link active" do %>
+    <i class="fas fa-tachometer-alt"></i> Dashboard
+    <%end%>
+    <a class="nav-link" href="/succours/new"><i class="fab fa-teamspeak"></i> Ask a Question </a>
+    <a class="nav-link" href="/supports"><i class="far fa-life-ring"></i> Support </a>
+    <a class="nav-link" href="/shop"><i class="fas fa-shopping-basket"></i> Shop </a>
+    <a class="nav-link">|</a>
+    <a class="nav-link" href="/succours"><i class="far fa-user-circle"></i> Your Questions <span class="badge bg-primary text-light"><%=@question_count%></span> </a>
+    <a class="nav-link" href="/resource"><i class="far fa-folder"></i> Resources <span class="badge bg-primary text-light">2</span> </a>
+
+  </nav>
+</div>
+<%end%>

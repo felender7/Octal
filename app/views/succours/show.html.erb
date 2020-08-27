@@ -1,0 +1,40 @@
+<div class="container-fluid mt-5">
+
+<div class="shadow-sm p-3 text-light bg-dark border-top-reviews">
+    <div class="row">
+      <div class="col-md-8">
+        <h4><i class="far fa-list-alt"></i> Your Request</h4>
+      </div>
+      <div class="col-md-4">
+        <a href="/" class="float-right text-danger"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a>
+      </div>
+    </div>
+</div>
+
+<div class="shadow-sm p-3 mb-5 bg-white">
+<div class="row">
+  <div class="col-lg-8">
+<div class="p-3 bg-light">
+<p><strong><i class="fas fa-tasks"></i> Task:</strong> <%= @succour.task %></p>
+<p><strong><i class="fas fa-layer-group"></i> Level:</strong> <%= @succour.level %></p>
+<p><strong><i class="fas fa-archive"></i> Course:</strong> <%= @succour.course %></p>
+</div>
+<hr>
+<strong><i class="fas fa-question-circle"></i> Question:</strong>
+<p><%= @succour.question.html_safe%></p>
+
+
+<%=link_to @succour.code ,download:'', class:"btn btn-sm btn-primary " do %>
+    <i class="fas fa-cloud-download-alt"></i> Download Code
+   <%end%>
+   <%= link_to edit_succour_path(@succour), class: 'btn btn-warning btn-sm' do %>
+     Edit
+   <% end %>
+</div>
+<div class="col-lg-4">
+  <%=render'shared/donate'%>
+</div>
+</div>
+</div>
+</div>
+<br><br><br>

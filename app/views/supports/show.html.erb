@@ -1,0 +1,32 @@
+<div class="container-fluid mt-5">
+
+<div class="shadow-sm p-3 text-light bg-dark border-top-reviews">
+    <div class="row">
+      <div class="col-md-8">
+        <h4><i class="far fa-list-alt"></i> <%=@support.subject%></h4>
+      </div>
+      <div class="col-md-4">
+        <a href="/supports" class="float-right text-danger"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a>
+      </div>
+    </div>
+</div>
+
+<div class="shadow-sm p-3 mb-5 bg-white">
+<div class="row">
+  <div class="col-lg-8">
+<div class="p-3 bg-light">
+<p><strong>To:</strong>admin@octal.co.za </p>
+<p><%= @support.message %></p>
+</div>
+<hr>
+   <%= link_to edit_support_path(@support), class: 'btn btn-warning btn-sm' do %>
+     Edit
+   <% end %>
+</div>
+<div class="col-lg-4">
+  <%=render'shared/donate'%>
+</div>
+</div>
+</div>
+</div>
+<br><br><br>

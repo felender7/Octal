@@ -1,0 +1,30 @@
+<%if current_user.supports.exists?%>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <tbody>
+      <% @supports.each do |support| %>
+        <%= content_tag :tr, id: dom_id(support), class: dom_class(support) do %>
+        <% if current_user && support.user == current_user %>
+                      <td><%= support.subject %><br>
+                       <small><span class="text-success"><%=time_ago_in_words(support.created_at) +" ago" %></span></small>
+                      </td>
+                      <td>
+                        <%=truncate(support.message.html_safe, length: 30) %>
+                      </td>
+            <td><%= link_to 'Show', support %></td>
+          <%end%>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%else%>
+
+<div class="bg-light text-primary text-center p-3">
+  <i class="far fa-folder-open fa-2x"></i> <br>
+<p>Nothing yet!</p>
+</div>
+
+<%end%>

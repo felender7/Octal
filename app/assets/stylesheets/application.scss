@@ -5,9 +5,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap";
+@import "navscroller";
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
-
+@import "sign_up";
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
   .container {
@@ -16,7 +17,45 @@
   }
 }
 
+
+body{
+  background: #ecf0f1;
+  display: -ms-flexbox;
+  height: 100%;
+}
 // Masquerade alert shouldn't have a bottom margin
 body > .alert {
   margin-bottom: 0;
+}
+
+
+.border-top-reviews {
+    border-top: 4px solid #2980b9 !important;
+}
+
+.jumbotron {
+    border-radius: 1px;
+}
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+
+
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+
+
+.bg-image {
+  background: url(asset_path("masthead.jpg")) no-repeat center center fixed;
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
