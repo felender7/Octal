@@ -12,14 +12,17 @@
                       <td>
                         <%=truncate(support.message.html_safe, length: 30) %>
                       </td>
-            <td><%= link_to 'Show', support %></td>
+            <td><%= link_to support do %>
+              <i class="far fa-list-alt"></i>
+               <%end%>
+            </td>
           <%end%>
         <% end %>
       <% end %>
     </tbody>
   </table>
 </div>
-
+<%= will_paginate @supports, list_classes: %w(pagination justify-content-end),renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 <%else%>
 
 <div class="bg-light text-primary text-center p-3">

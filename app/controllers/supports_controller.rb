@@ -6,7 +6,7 @@ class SupportsController < ApplicationController
   # GET /supports
   # GET /supports.json
   def index
-    @supports = Support.all
+    @supports = Support.paginate(:page => params[:page], :per_page => 3).order("created_at DESC")
   end
 
   # GET /supports/1
