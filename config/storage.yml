@@ -32,3 +32,9 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+publit:
+    API_Key: "dWcf788NVVf557zBMz27"
+    API_Secret: "xpWRlbvwtq4kmav1RQP8nq0DRv0nGf62"
+    API_Endpoint: "https://api.publit.io"
+    API_Signature: "&api_signature=bb69ed7da016abe193b6c35427e6b2bf92307f7b&api_key=dWcf788NVVf557zBMz27&api_nonce=11427783&api_timestamp=1598580376"

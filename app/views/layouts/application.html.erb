@@ -8,9 +8,10 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/notices' %>
     <%if user_signed_in?%>
-    <div class="container-fluid">
+    <div class="">
       <%= yield %>
     </div>
+
     <%else%>
     <body class="bg-image">
       <%= yield %>
