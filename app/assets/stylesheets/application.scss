@@ -9,6 +9,7 @@
 @import "jumpstart/sticky-footer";
 @import "jumpstart/announcements";
 @import "sign_up";
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {
   .container {
@@ -108,4 +109,7 @@ svg:not(:root).svg-inline--fa {
     height: 1em;
     overflow: visible;
     vertical-align: -0.125em;
+}
+.brand-text{
+  font-family: 'Anton', sans-serif;
 }
