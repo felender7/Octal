@@ -45,7 +45,9 @@
   </div>
   <%= will_paginate @succours, list_classes: %w(pagination justify-content-end),renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
+</div>
 <%else%>
+<div class="container-fluid mt-5 ">
 <div class="shadow-sm p-3 bg-dark text-light border-top-reviews mt-5">
   <div class="row">
     <div class="col-md-8 col">
@@ -62,5 +64,5 @@
     <i class="far fa-folder-open fa-2x"></i> <br>
   <p>Nothing yet!</p>
   </div>
+  </div>
 <%end%>
-</div>

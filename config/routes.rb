@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
-  devise_for :users, :path_prefix => 'd', controllers: {confirmations: 'confirmations' }
+  devise_for :users, :path_prefix => 'd'
   resources :users, :only =>[:show]
   root to: 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
