@@ -23,10 +23,11 @@
     <strong><i class="fas fa-archive"></i> Course:</strong><%=display_question.course%> <hr>
     <strong> <i class="fas fa-question-circle"></i> Question:</strong>
     <small><%=display_question.question%></small><br><br>
+    <% if display_question.code.present?%>
     <%= link_to display_question.code, download:'' , class:"btn btn-primary btn-sm" do %>
       <i class="fas fa-file-download text-light" data-toggle="tooltip" title="Download" ></i> Download code
       <%end%>
-
+     <%end%>
     </div>
   </div>
   </div>

@@ -23,10 +23,11 @@
 <strong><i class="fas fa-question-circle"></i> Question:</strong>
 <p><%= @succour.question.html_safe%></p>
 
-
-<%=link_to @succour.code ,download:'', class:"btn btn-sm btn-primary " do %>
-    <i class="fas fa-cloud-download-alt"></i> Download Code
-   <%end%>
+ <% if @succour.code.present?%>
+  <%=link_to @succour.code ,download:'', class:"btn btn-sm btn-primary " do %>
+      <i class="fas fa-cloud-download-alt"></i> Download Code
+     <%end%>
+  <%end%>
    <%= link_to edit_succour_path(@succour), class: 'btn btn-warning btn-sm' do %>
      Edit
    <% end %>
