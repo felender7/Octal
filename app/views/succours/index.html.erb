@@ -1,3 +1,4 @@
+<%if current_user.succours.exists?%>
 <div class="container-fluid mt-5 ">
   <div class="shadow-sm p-3 bg-dark text-light border-top-reviews">
     <div class="row">
@@ -30,14 +31,36 @@
           <%= content_tag :tr, id: dom_id(succour), class: dom_class(succour) do %>
           <% if current_user && succour.user == current_user %>
                         <td><%= succour.course %></td>
-                        <td><%=truncate(succour.question.html_safe, length: 40) %></td>
+                        <td><%=truncate(succour.question, length: 40, :escape => false) %></td>
                         <td><span class="text-success"><%=time_ago_in_words(succour.created_at) +" ago" %></span></td>
-              <td><%= link_to 'Show', succour %></td>
+              <td><%= link_to succour  do %>
+                <i class="far fa-list-alt"></i>
+                <%end%>
+              </td>
           <% end %>
         <% end %>
       <% end %>
       </tbody>
     </table>
   </div>
+  <%= will_paginate @succours, list_classes: %w(pagination justify-content-end),renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>
+<%else%>
+<div class="shadow-sm p-3 bg-dark text-light border-top-reviews mt-5">
+  <div class="row">
+    <div class="col-md-8 col">
+      <h4><i class="far fa-list-alt"></i> What you have asked</h4>
+    </div>
+    <div class="col">
+      <%= link_to new_succour_path, class: 'btn btn-primary btn-sm float-right' do %>
+      <i class="fas fa-plus-square"></i> Ask a question
+      <% end %>
+    </div>
+  </div>
+</div>
+  <div class="bg-light text-primary text-center p-3 ">
+    <i class="far fa-folder-open fa-2x"></i> <br>
+  <p>Nothing yet!</p>
+  </div>
+<%end%>
 </div>

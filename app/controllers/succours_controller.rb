@@ -6,7 +6,7 @@ class SuccoursController < ApplicationController
   # GET /succours
   # GET /succours.json
   def index
-    @succours = Succour.all
+    @succours = Succour.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
   end
 
   # GET /succours/1
