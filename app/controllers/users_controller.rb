@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       if user_signed_in?
         @user = User.friendly.find(params[:id])
         @display_questions = @user.succours
+        @user_questions = @user.succours.count
     end
   end
 end

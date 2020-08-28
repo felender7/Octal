@@ -113,3 +113,31 @@ svg:not(:root).svg-inline--fa {
 .brand-text{
   font-family: 'Anton', sans-serif;
 }
+
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    border-left-width: 0;
+}
+
+table.dataTable th {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #e3e6f0;
+        border-left-width: 1px;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #e3e6f0;
+}
+th {
+    text-align: inherit;
+}
+table.dataTable {
+    border-collapse: separate !important;
+    border-spacing: 0;
+}
+.table {
+    color: #858796;
+}

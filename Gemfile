@@ -78,3 +78,5 @@ gem 'image_processing'
 gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 gem 'will_paginate-bootstrap4'
+gem 'administrate-field-active_storage'
+gem "image_processing"

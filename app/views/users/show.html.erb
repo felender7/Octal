@@ -4,16 +4,19 @@
       <div class="row">
         <div class="col-md-8">
           <h4><i class="far fa-list-alt"></i>
-
-            <%= @user.name %> </h4>
-          <small><%=@user.email%></small>
+            <%= @user.name %></h4>
         </div>
         <div class="col-md-4">
           <a href="/users" class="float-right text-danger"> <i class="fa fa-window-close" data-toggle="tooltip" title="Close"> </i></a>
         </div>
       </div>
   </div>
-
+  <div class="bg-light p-3 text-secondary ">
+      <span class="badge badge-pill badge-secondary">Questions <span class="badge badge-pill badge-dark"><%=@user_questions%></span></span>
+      <span class="badge badge-pill badge-warning ">Messages <span class="badge badge-pill badge-dark"><%=@user_questions%></span></span>
+    
+  </div>
+<br>
   <%@display_questions.each do |display_question| %>
   <div class="shadow-sm p-3 bg-white border-top-reviews">
   <div class="row">
