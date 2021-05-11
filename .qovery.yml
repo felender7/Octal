@@ -1,0 +1,23 @@
+---
+application:
+  name: "octal"
+  project: "Ocatal"
+  organization: "QoveryCommunity"
+  storage:
+  - name: "images"
+    size: "500"
+    type: "hdd"
+    mount_point: "/mnt/images"
+databases:
+- type: "POSTGRESQL"
+  name: "octal"
+  version: "11"
+- type: "REDIS"
+  name: "oct"
+  version: "6"
+routers:
+- name: "main-octal"
+  routes:
+  - application_name: "octal"
+    paths:
+    - "/*"
